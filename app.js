@@ -26,3 +26,13 @@ function calculate() {
 
 	document.getElementById("total").innerHTML = `${calculation} calories`;
 }
+
+function output() {
+	let output = document.getElementById("heightSlider").value;
+
+	let integer = Math.floor(output / 12);
+	let remainder = Math.round(((output / 12) % 1) * 12);
+	console.log(`height in inches: ${output}`);
+	console.log(`ft: ${integer}`);
+	console.log(`in: ${remainder}`);
+}
