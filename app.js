@@ -7,7 +7,7 @@ function calculate() {
 	let genderSelect = document.getElementById("gender-select");
 	let gender = genderSelect.value;
 	let age = document.getElementById("age").value;
-	let height = document.getElementById("height").value * 2.54; //cm
+	let height = document.getElementById("heightSlider").value * 2.54; //cm
 	let weight = document.getElementById("weight").value * 0.453592; //kg
 	let genderNumber;
 
@@ -24,15 +24,18 @@ function calculate() {
 		10 * weight + 6.25 * height - 5 * age + genderNumber
 	);
 
-	document.getElementById("total").innerHTML = `${calculation} calories`;
+	document.getElementById("total").innerHTML = `BMR: ${calculation} kcal/day`;
 }
 
 function output() {
-	let output = document.getElementById("heightSlider").value;
+	let output = document.getElementById("heightSlider").value; //total inches
 
-	let integer = Math.floor(output / 12);
-	let remainder = Math.round(((output / 12) % 1) * 12);
-	console.log(`height in inches: ${output}`);
-	console.log(`ft: ${integer}`);
-	console.log(`in: ${remainder}`);
+	let integer = Math.floor(output / 12); //ft
+	let remainder = Math.round(((output / 12) % 1) * 12); //in
+
+	let currentHeight = remainder
+		? `${integer}ft ${remainder}in`
+		: `${integer}ft`;
+
+	document.getElementById("selectedHeight").innerHTML = currentHeight;
 }

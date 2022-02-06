@@ -32,19 +32,8 @@
 				Age
 				<input id="age" name="age" type="number" />
 			</label>
-			<label class="label">
+			<label class="slider-container label">
 				Height
-				<input type="number" name="height" id="height" />
-				<span>in</span>
-			</label>
-			<label class="label">
-				Weight
-				<input type="number" name="weight" id="weight" />
-				<span>lbs</span>
-			</label>
-			<input type="submit" />
-			<h1 id="total"></h1>
-			<div class="slider-container">
 				<input
 					orient="vertical"
 					type="range"
@@ -102,7 +91,30 @@
 					<option value="89" label="89"></option>
 					<option value="90" label="90"></option>
 				</datalist>
-			</div>
+				<output id="selectedHeight">5ft 9in</output>
+			</label>
+			<label class="label">
+				Weight
+				<input type="number" name="weight" id="weight" />
+				<span>lbs</span>
+			</label>
+			<label class="label">
+				Activity Level
+				<select
+					defaultValue="default"
+					name="activity-select"
+					id="activitySelect"
+				>
+					<option disabled selected value>-- select an option --</option>
+					<option value="sedentary">Sedentary</option>
+					<option value="light">Lightly Active</option>
+					<option value="moderate">Moderately Active</option>
+					<option value="very">Very Active</option>
+					<option value="extreme">Extremely Active</option>
+				</select>
+			</label>
+			<input type="submit" />
+			<h1 id="total"></h1>
 		</form>
 		<script src="app.js" defer></script>
 	</body>
